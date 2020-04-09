@@ -244,8 +244,8 @@
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
-                        "lValueRequested": false,
-                        "type": "address payable"
+                        "type": "address payable",
+                        "willBeWrittenTo": false
                       },
                       "children":
                       [
@@ -301,9 +301,9 @@
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
-                        "lValueRequested": false,
                         "operator": "=",
-                        "type": "address payable"
+                        "type": "address payable",
+                        "willBeWrittenTo": false
                       },
                       "children":
                       [
@@ -399,14 +399,14 @@
                         "isLValue": false,
                         "isPure": false,
                         "isStructConstructorCall": false,
-                        "lValueRequested": false,
                         "names":
                         [
                           null
                         ],
                         "tryCall": false,
                         "type": "address",
-                        "type_conversion": true
+                        "type_conversion": true,
+                        "willBeWrittenTo": false
                       },
                       "children":
                       [
@@ -423,8 +423,8 @@
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
-                            "lValueRequested": false,
-                            "type": "type(address)"
+                            "type": "type(address)",
+                            "willBeWrittenTo": false
                           },
                           "children":
                           [
@@ -479,9 +479,9 @@
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
-                        "lValueRequested": false,
                         "operator": "=",
-                        "type": "address payable"
+                        "type": "address payable",
+                        "willBeWrittenTo": false
                       },
                       "children":
                       [
@@ -492,8 +492,8 @@
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
-                            "lValueRequested": true,
-                            "type": "address payable"
+                            "type": "address payable",
+                            "willBeWrittenTo": true
                           },
                           "children":
                           [
@@ -542,14 +542,14 @@
                             "isLValue": false,
                             "isPure": true,
                             "isStructConstructorCall": false,
-                            "lValueRequested": false,
                             "names":
                             [
                               null
                             ],
                             "tryCall": false,
                             "type": "address payable",
-                            "type_conversion": true
+                            "type_conversion": true,
+                            "willBeWrittenTo": false
                           },
                           "children":
                           [
@@ -566,8 +566,8 @@
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
-                                "lValueRequested": false,
-                                "type": "type(address)"
+                                "type": "type(address)",
+                                "willBeWrittenTo": false
                               },
                               "children":
                               [
@@ -594,11 +594,11 @@
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
-                                "lValueRequested": false,
                                 "subdenomination": null,
                                 "token": "number",
                                 "type": "int_const 0",
-                                "value": "0"
+                                "value": "0",
+                                "willBeWrittenTo": false
                               },
                               "id": 33,
                               "name": "Literal",

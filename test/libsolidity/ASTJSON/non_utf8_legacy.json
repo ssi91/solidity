@@ -124,11 +124,11 @@
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
-                        "lValueRequested": false,
                         "subdenomination": null,
                         "token": "string",
                         "type": "literal_string (contains invalid UTF-8 sequence at position 0)",
-                        "value": null
+                        "value": null,
+                        "willBeWrittenTo": false
                       },
                       "id": 4,
                       "name": "Literal",

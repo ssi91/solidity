@@ -174,11 +174,11 @@
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
-                    "lValueRequested": false,
                     "subdenomination": null,
                     "token": "number",
                     "type": "int_const 1",
-                    "value": "1"
+                    "value": "1",
+                    "willBeWrittenTo": false
                   },
                   "id": 9,
                   "name": "Literal",

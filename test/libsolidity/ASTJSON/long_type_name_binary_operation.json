@@ -87,7 +87,6 @@
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
-                  "lValueRequested": false,
                   "leftExpression":
                   {
                     "argumentTypes": null,
@@ -97,7 +96,6 @@
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
-                    "lValueRequested": false,
                     "nodeType": "Literal",
                     "src": "44:1:1",
                     "subdenomination": null,
@@ -106,7 +104,8 @@
                       "typeIdentifier": "t_rational_2_by_1",
                       "typeString": "int_const 2"
                     },
-                    "value": "2"
+                    "value": "2",
+                    "willBeWrittenTo": false
                   },
                   "nodeType": "BinaryOperation",
                   "operator": "+",
@@ -119,7 +118,6 @@
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
-                    "lValueRequested": false,
                     "nodeType": "Literal",
                     "src": "48:1:1",
                     "subdenomination": null,
@@ -128,14 +126,16 @@
                       "typeIdentifier": "t_rational_3_by_1",
                       "typeString": "int_const 3"
                     },
-                    "value": "3"
+                    "value": "3",
+                    "willBeWrittenTo": false
                   },
                   "src": "44:5:1",
                   "typeDescriptions":
                   {
                     "typeIdentifier": "t_rational_5_by_1",
                     "typeString": "int_const 5"
-                  }
+                  },
+                  "willBeWrittenTo": false
                 },
                 "nodeType": "VariableDeclarationStatement",
                 "src": "35:14:1"

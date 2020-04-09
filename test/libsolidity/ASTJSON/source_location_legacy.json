@@ -124,11 +124,11 @@
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
-                        "lValueRequested": false,
                         "subdenomination": null,
                         "token": "number",
                         "type": "int_const 2",
-                        "value": "2"
+                        "value": "2",
+                        "willBeWrittenTo": false
                       },
                       "id": 4,
                       "name": "Literal",
@@ -149,10 +149,10 @@
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
-                        "lValueRequested": false,
                         "operator": "++",
                         "prefix": false,
-                        "type": "uint8"
+                        "type": "uint8",
+                        "willBeWrittenTo": false
                       },
                       "children":
                       [

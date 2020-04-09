@@ -169,14 +169,14 @@
                   "isConstant": false,
                   "isLValue": true,
                   "isPure": false,
-                  "lValueRequested": false,
                   "nodeType": "IndexAccess",
                   "src": "164:6:1",
                   "typeDescriptions":
                   {
                     "typeIdentifier": "t_address_payable",
                     "typeString": "address payable"
-                  }
+                  },
+                  "willBeWrittenTo": false
                 },
                 "nodeType": "VariableDeclarationStatement",
                 "src": "144:26:1"
@@ -189,7 +189,6 @@
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": false,
-                  "lValueRequested": false,
                   "leftHandSide":
                   {
                     "argumentTypes": null,
@@ -227,7 +226,8 @@
                   {
                     "typeIdentifier": "t_address_payable",
                     "typeString": "address payable"
-                  }
+                  },
+                  "willBeWrittenTo": false
                 },
                 "id": 20,
                 "nodeType": "ExpressionStatement",
@@ -307,7 +307,6 @@
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
-                    "lValueRequested": false,
                     "nodeType": "ElementaryTypeNameExpression",
                     "src": "209:7:1",
                     "typeDescriptions":
@@ -326,14 +325,14 @@
                         "typeIdentifier": null,
                         "typeString": null
                       }
-                    }
+                    },
+                    "willBeWrittenTo": false
                   },
                   "id": 26,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": false,
                   "kind": "typeConversion",
-                  "lValueRequested": false,
                   "names": [],
                   "nodeType": "FunctionCall",
                   "src": "209:13:1",
@@ -342,7 +341,8 @@
                   {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
-                  }
+                  },
+                  "willBeWrittenTo": false
                 },
                 "nodeType": "VariableDeclarationStatement",
                 "src": "197:25:1"
@@ -355,7 +355,6 @@
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": false,
-                  "lValueRequested": false,
                   "leftHandSide":
                   {
                     "argumentTypes": null,
@@ -393,14 +392,14 @@
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
-                    "lValueRequested": true,
                     "nodeType": "IndexAccess",
                     "src": "232:4:1",
                     "typeDescriptions":
                     {
                       "typeIdentifier": "t_address_payable",
                       "typeString": "address payable"
-                    }
+                    },
+                    "willBeWrittenTo": true
                   },
                   "nodeType": "Assignment",
                   "operator": "=",
@@ -417,7 +416,6 @@
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
-                        "lValueRequested": false,
                         "nodeType": "Literal",
                         "src": "247:1:1",
                         "subdenomination": null,
@@ -426,7 +424,8 @@
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
-                        "value": "0"
+                        "value": "0",
+                        "willBeWrittenTo": false
                       }
                     ],
                     "expression":
@@ -442,7 +441,6 @@
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
-                      "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
                       "src": "239:7:1",
                       "typeDescriptions":
@@ -461,14 +459,14 @@
                           "typeIdentifier": null,
                           "typeString": null
                         }
-                      }
+                      },
+                      "willBeWrittenTo": false
                     },
                     "id": 34,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "typeConversion",
-                    "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
                     "src": "239:10:1",
@@ -477,14 +475,16 @@
                     {
                       "typeIdentifier": "t_address_payable",
                       "typeString": "address payable"
-                    }
+                    },
+                    "willBeWrittenTo": false
                   },
                   "src": "232:17:1",
                   "typeDescriptions":
                   {
                     "typeIdentifier": "t_address_payable",
                     "typeString": "address payable"
-                  }
+                  },
+                  "willBeWrittenTo": false
                 },
                 "id": 36,
                 "nodeType": "ExpressionStatement",

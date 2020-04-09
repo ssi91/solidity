@@ -210,7 +210,7 @@ JSON AST:
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
-                        "lValueRequested": false,
+                        "willBeWrittenTo": false,
                         "subdenomination": null,
                         "token": "number",
                         "type": "int_const 5",

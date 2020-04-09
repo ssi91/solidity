@@ -73,7 +73,6 @@
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
-                  "lValueRequested": false,
                   "nodeType": "Literal",
                   "src": "36:1:1",
                   "subdenomination": null,
@@ -82,7 +81,8 @@
                     "typeIdentifier": "t_rational_2_by_1",
                     "typeString": "int_const 2"
                   },
-                  "value": "2"
+                  "value": "2",
+                  "willBeWrittenTo": false
                 },
                 "nodeType": "VariableDeclarationStatement",
                 "src": "28:9:1"
@@ -95,7 +95,6 @@
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": false,
-                  "lValueRequested": false,
                   "nodeType": "UnaryOperation",
                   "operator": "++",
                   "prefix": false,
@@ -119,7 +118,8 @@
                   {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
-                  }
+                  },
+                  "willBeWrittenTo": false
                 },
                 "id": 8,
                 "nodeType": "ExpressionStatement",

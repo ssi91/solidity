@@ -139,9 +139,9 @@
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
-                        "lValueRequested": false,
                         "operator": "+",
-                        "type": "int_const 5"
+                        "type": "int_const 5",
+                        "willBeWrittenTo": false
                       },
                       "children":
                       [
@@ -153,11 +153,11 @@
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
-                            "lValueRequested": false,
                             "subdenomination": null,
                             "token": "number",
                             "type": "int_const 2",
-                            "value": "2"
+                            "value": "2",
+                            "willBeWrittenTo": false
                           },
                           "id": 5,
                           "name": "Literal",
@@ -171,11 +171,11 @@
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
-                            "lValueRequested": false,
                             "subdenomination": null,
                             "token": "number",
                             "type": "int_const 3",
-                            "value": "3"
+                            "value": "3",
+                            "willBeWrittenTo": false
                           },
                           "id": 6,
                           "name": "Literal",
