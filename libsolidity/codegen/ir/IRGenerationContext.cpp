@@ -32,6 +32,15 @@ using namespace solidity;
 using namespace solidity::util;
 using namespace solidity::frontend;
 
+FunctionDefinition const* IRFunctionGenerationQueue::pop()
+{
+	solAssert(!m_definitions.empty(), "");
+
+	FunctionDefinition const* result = *m_definitions.begin();
+	m_definitions.erase(m_definitions.begin());
+	return result;
+}
+
 ContractDefinition const& IRGenerationContext::mostDerivedContract() const
 {
 	solAssert(m_mostDerivedContract, "Most derived contract requested but not set.");

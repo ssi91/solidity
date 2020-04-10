@@ -30,6 +30,7 @@
 
 #include <libsolutil/Common.h>
 
+#include <set>
 #include <string>
 #include <memory>
 #include <vector>
@@ -42,6 +43,26 @@ class VariableDeclaration;
 class FunctionDefinition;
 class Expression;
 class YulUtilFunctions;
+
+/**
+ * A very thin wrapper over a collection of function definitions.
+ * It provides a queue-like interface but does not guarantee element order and does not
+ * preserve duplicates.
+ */
+class IRFunctionGenerationQueue
+{
+public:
+	void push(FunctionDefinition const* _definition) { m_definitions.insert(_definition); }
+	FunctionDefinition const* pop();
+	void clear() { m_definitions.clear(); }
+
+	bool empty() const { return m_definitions.empty(); }
+	size_t size() const { return m_definitions.size(); };
+
+private:
+	// Since we don't care about duplicates or order, std::set serves our needs better than std::queue.
+	std::set<FunctionDefinition const*> m_definitions;
+};
 
 /**
  * Class that contains contextual information during IR generation.
@@ -60,6 +81,13 @@ public:
 	{}
 
 	MultiUseYulFunctionCollector& functionCollector() { return m_functions; }
+
+	/// Provides access to the function definitions queued for code generation. They're the
+	/// functions whose calls were discovered by the IR generator during AST traversal.
+	/// Note that the queue gets filled in a lazy way - new definitions can be added while the
+	/// collected ones get removed and traversed.
+	IRFunctionGenerationQueue& functionGenerationQueue() { return m_functionGenerationQueue; }
+	IRFunctionGenerationQueue const& functionGenerationQueue() const { return m_functionGenerationQueue; }
 
 	/// Sets the most derived contract (the one currently being compiled)>
 	void setMostDerivedContract(ContractDefinition const& _mostDerivedContract)
@@ -112,6 +140,7 @@ private:
 	/// Storage offsets of state variables
 	std::map<VariableDeclaration const*, std::pair<u256, unsigned>> m_stateVariables;
 	MultiUseYulFunctionCollector m_functions;
+	IRFunctionGenerationQueue m_functionGenerationQueue;
 	size_t m_varCounter = 0;
 };
 
