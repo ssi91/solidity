@@ -581,11 +581,14 @@ void IRGeneratorForStatements::endVisit(FunctionCall const& _functionCall)
 					"(" <<
 					joinHumanReadable(args) <<
 					")\n";
+
+				m_context.enqueueFunctionForCodeGeneration(functionDef->resolveVirtual(m_context.mostDerivedContract()));
 				return;
 			}
 		}
 
 		define(_functionCall) <<
+			// NOTE: internalDispatch() takes care of adding the function to function generation queue
 			m_context.internalDispatch(
 				TupleType(functionType->parameterTypes()).sizeOnStack(),
 				TupleType(functionType->returnParameterTypes()).sizeOnStack()

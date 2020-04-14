@@ -86,6 +86,12 @@ string IRGenerationContext::functionName(VariableDeclaration const& _varDecl)
 	return "getter_fun_" + _varDecl.name() + "_" + to_string(_varDecl.id());
 }
 
+string IRGenerationContext::enqueueFunctionForCodeGeneration(FunctionDefinition const& _function)
+{
+	m_functionGenerationQueue.push(&_function);
+	return functionName(_function);
+}
+
 string IRGenerationContext::virtualFunctionName(FunctionDefinition const& _functionDeclaration)
 {
 	return functionName(_functionDeclaration.resolveVirtual(mostDerivedContract()));
@@ -146,6 +152,8 @@ string IRGenerationContext::internalDispatch(size_t _in, size_t _out)
 						{ "funID", to_string(function->id()) },
 						{ "name", functionName(*function)}
 					});
+
+					enqueueFunctionForCodeGeneration(*function);
 				}
 		templ("cases", move(functions));
 		return templ.render();

@@ -89,6 +89,9 @@ public:
 	IRFunctionGenerationQueue& functionGenerationQueue() { return m_functionGenerationQueue; }
 	IRFunctionGenerationQueue const& functionGenerationQueue() const { return m_functionGenerationQueue; }
 
+	/// Adds a function to the function generation queue and returns the name of the function.
+	std::string enqueueFunctionForCodeGeneration(FunctionDefinition const& _function);
+
 	/// Sets the most derived contract (the one currently being compiled)>
 	void setMostDerivedContract(ContractDefinition const& _mostDerivedContract)
 	{
