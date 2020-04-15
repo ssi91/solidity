@@ -577,12 +577,10 @@ void IRGeneratorForStatements::endVisit(FunctionCall const& _functionCall)
 			if (auto functionDef = dynamic_cast<FunctionDefinition const*>(identifier->annotation().referencedDeclaration))
 			{
 				define(_functionCall) <<
-					m_context.virtualFunctionName(*functionDef) <<
+					m_context.enqueueVirtualFunctionForCodeGeneration(*functionDef) <<
 					"(" <<
 					joinHumanReadable(args) <<
 					")\n";
-
-				m_context.enqueueFunctionForCodeGeneration(functionDef->resolveVirtual(m_context.mostDerivedContract()));
 				return;
 			}
 		}

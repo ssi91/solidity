@@ -92,9 +92,9 @@ string IRGenerationContext::enqueueFunctionForCodeGeneration(FunctionDefinition 
 	return functionName(_function);
 }
 
-string IRGenerationContext::virtualFunctionName(FunctionDefinition const& _functionDeclaration)
+string IRGenerationContext::enqueueVirtualFunctionForCodeGeneration(FunctionDefinition const& _function)
 {
-	return functionName(_functionDeclaration.resolveVirtual(mostDerivedContract()));
+	return enqueueFunctionForCodeGeneration(_function.resolveVirtual(mostDerivedContract()));
 }
 
 string IRGenerationContext::newYulVariable()

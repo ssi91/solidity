@@ -92,6 +92,10 @@ public:
 	/// Adds a function to the function generation queue and returns the name of the function.
 	std::string enqueueFunctionForCodeGeneration(FunctionDefinition const& _function);
 
+	/// Resolves a virtual function call into the right definition and queues it for code generation
+	/// code generation. Returns the name of the queued function.
+	std::string enqueueVirtualFunctionForCodeGeneration(FunctionDefinition const& _functionDeclaration);
+
 	/// Sets the most derived contract (the one currently being compiled)>
 	void setMostDerivedContract(ContractDefinition const& _mostDerivedContract)
 	{
@@ -113,7 +117,6 @@ public:
 
 	std::string functionName(FunctionDefinition const& _function);
 	std::string functionName(VariableDeclaration const& _varDecl);
-	std::string virtualFunctionName(FunctionDefinition const& _functionDeclaration);
 
 	std::string newYulVariable();
 
