@@ -121,9 +121,9 @@ string IRGenerator::generate(Block const& _block)
 
 void IRGenerator::generateQueuedFunctions()
 {
-	while (!m_context.functionGenerationQueue().empty())
+	while (!m_context.functionGenerationQueueEmpty())
 		// NOTE: generateFunction() may modify function generation queue
-		generateFunction(*m_context.functionGenerationQueue().pop());
+		generateFunction(*m_context.dequeueFunctionForCodeGeneration());
 }
 
 string IRGenerator::generateFunction(FunctionDefinition const& _function)
@@ -413,7 +413,7 @@ string IRGenerator::memoryInit()
 void IRGenerator::resetContext(ContractDefinition const& _contract)
 {
 	solAssert(
-		m_context.functionGenerationQueue().empty(),
+		m_context.functionGenerationQueueEmpty(),
 		"Reset function generation queue while it still had functions."
 	);
 	solAssert(

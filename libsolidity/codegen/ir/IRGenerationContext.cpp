@@ -32,15 +32,6 @@ using namespace solidity;
 using namespace solidity::util;
 using namespace solidity::frontend;
 
-FunctionDefinition const* IRFunctionGenerationQueue::pop()
-{
-	solAssert(!m_definitions.empty(), "");
-
-	FunctionDefinition const* result = *m_definitions.begin();
-	m_definitions.erase(m_definitions.begin());
-	return result;
-}
-
 ContractDefinition const& IRGenerationContext::mostDerivedContract() const
 {
 	solAssert(m_mostDerivedContract, "Most derived contract requested but not set.");
@@ -88,13 +79,22 @@ string IRGenerationContext::functionName(VariableDeclaration const& _varDecl)
 
 string IRGenerationContext::enqueueFunctionForCodeGeneration(FunctionDefinition const& _function)
 {
-	m_functionGenerationQueue.push(&_function);
+	m_functionGenerationQueue.insert(&_function);
 	return functionName(_function);
 }
 
 string IRGenerationContext::enqueueVirtualFunctionForCodeGeneration(FunctionDefinition const& _function)
 {
 	return enqueueFunctionForCodeGeneration(_function.resolveVirtual(mostDerivedContract()));
+}
+
+FunctionDefinition const* IRGenerationContext::dequeueFunctionForCodeGeneration()
+{
+	solAssert(!m_functionGenerationQueue.empty(), "");
+
+	FunctionDefinition const* result = *m_functionGenerationQueue.begin();
+	m_functionGenerationQueue.erase(m_functionGenerationQueue.begin());
+	return result;
 }
 
 string IRGenerationContext::newYulVariable()
