@@ -947,7 +947,7 @@ bool CommandLineInterface::processInput()
 					"ReadFile callback used as callback kind " +
 					_kind
 				));
-			auto path = boost::filesystem::path(_path);
+			auto path = boost::filesystem::path(trimProtocol(_path));
 			auto canonicalPath = boost::filesystem::weakly_canonical(path);
 			bool isAllowed = false;
 			for (auto const& allowedDir: m_allowedDirectories)
@@ -1688,6 +1688,12 @@ void CommandLineInterface::outputCompilationResults()
 		else
 			serr() << "Compiler run successful, no output requested." << endl;
 	}
+}
+
+std::string CommandLineInterface::trimProtocol(std::string path) {
+    if (path.find_first_of("file://") == 0)
+        path.erase(0, 7);
+    return path;
 }
 
 }
