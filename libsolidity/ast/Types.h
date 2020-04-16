@@ -1398,6 +1398,7 @@ public:
 	std::string richIdentifier() const override;
 	bool operator==(Type const& _other) const override;
 	std::string toString(bool _short) const override;
+	TypePointers parameterTypes() const;
 	bool hasEqualParameterTypes(ModifierType const& _other) const;
 	ModifierDefinition const* declaration() const
 	{

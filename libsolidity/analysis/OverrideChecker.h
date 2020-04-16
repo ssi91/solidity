@@ -62,6 +62,9 @@ public:
 		bool operator()(OverrideProxy const& _a, OverrideProxy const& _b) const;
 	};
 
+	// Checks if two proxies have the same callable signature.
+	bool isSameSignature(OverrideProxy const& _other) const;
+
 	bool isVariable() const;
 	bool isFunction() const;
 	bool isModifier() const;
@@ -84,6 +87,10 @@ public:
 
 	FunctionType const* functionType() const;
 	ModifierType const* modifierType() const;
+
+	FunctionDefinition const* functionDefinition() const;
+	ModifierDefinition const* modifierDefinition() const;
+	VariableDeclaration const* variableDeclaration() const;
 
 	langutil::SourceLocation const& location() const;
 

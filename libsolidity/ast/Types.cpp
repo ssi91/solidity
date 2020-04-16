@@ -3580,6 +3580,11 @@ string ModifierType::toString(bool _short) const
 	return name + ")";
 }
 
+TypePointers ModifierType::parameterTypes() const
+{
+	return m_parameterTypes;
+}
+
 bool ModifierType::hasEqualParameterTypes(ModifierType const& _other) const
 {
 	if (m_parameterTypes.size() != _other.m_parameterTypes.size())

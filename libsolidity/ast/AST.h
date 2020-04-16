@@ -978,12 +978,12 @@ public:
 		ASTPointer<ParameterList> const& _parameters,
 		bool _isVirtual,
 		ASTPointer<OverrideSpecifier> const& _overrides,
-		ASTPointer<Block> _body
+		ASTPointer<Block> const& _body
 	):
 		CallableDeclaration(_id, _location, _name, Visibility::Internal, _parameters, _isVirtual, _overrides),
 		StructurallyDocumented(_documentation),
 		ImplementationOptional(_body != nullptr),
-		m_body(std::move(_body))
+		m_body(_body)
 	{
 	}
 
