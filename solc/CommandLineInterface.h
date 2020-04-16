@@ -56,6 +56,8 @@ private:
 	/// @returns the full object with library placeholder hints in hex.
 	static std::string objectWithLinkRefsHex(evmasm::LinkerObject const& _obj);
 
+	static std::string trimProtocol(std::string);
+
 	bool assemble(yul::AssemblyStack::Language _language, yul::AssemblyStack::Machine _targetMachine, bool _optimize);
 
 	void outputCompilationResults();
@@ -124,6 +126,8 @@ private:
 	CompilerStack::MetadataHash m_metadataHash = CompilerStack::MetadataHash::IPFS;
 	/// Whether or not to colorize diagnostics output.
 	bool m_coloredOutput = true;
+
+    std::string trimProtocol();
 };
 
 }
