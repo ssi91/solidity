@@ -125,8 +125,6 @@ private:
 	CompilerStack::MetadataHash m_metadataHash = CompilerStack::MetadataHash::IPFS;
 	/// Whether or not to colorize diagnostics output.
 	bool m_coloredOutput = true;
-
-    std::string trimProtocol();
 };
 
 }
