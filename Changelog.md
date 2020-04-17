@@ -8,6 +8,7 @@ Compiler Features:
 
 Bugfixes:
  * Type Checker: Disallow ``virtual`` and ``override`` for constructors.
+ * Standard Json Input: Error when in the `"urls"` field path has prefix `file://`
 
 
 
