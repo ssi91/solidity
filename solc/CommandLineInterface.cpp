@@ -1688,7 +1688,7 @@ void CommandLineInterface::outputCompilationResults()
 }
 
 std::string CommandLineInterface::trimProtocol(std::string path) {
-    if (path.find_first_of("file://") == 0)
+    if (path.find("file://") == 0)
         path.erase(0, 7);
     return path;
 }
